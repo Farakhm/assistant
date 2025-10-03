@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Chat window </title>
+        <style>
+            .header {
+            background-color: rgb(203, 206, 243);
+            /* Рсположить элементы по горизонтали */
+            display: flex;
+            /* Выровнять элементы по оси Y */
+            align-items: center;
+            /* Выровнять элементы по оси X */
+            justify-content: space-between;
+            font-size: small;
+            font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Chat window!</h2>
+        <form action="/index" enctype="multipart/form-data" method="POST">
+            <div class="header">
+                <fieldset style="width:600px"><legend>Доступные модели</legend>
+                    {% for model in models %}
+                        {% if model.choice == 1 %}
+                            <input type="radio" id="{{ model.name }}" name="method" value="{{ model.value }}" checked>
+                            <label for="contactChoice">{{ model.name }}</label><br>
+                        {% else %}
+                            <input type="radio" id="{{ model.name }}" name="method" value="{{ model.value }}">
+                            <label for="contactChoice">{{ model.name }}</label><br>
+                        {% endif %}
+                    {% endfor %}
+                </fieldset>
+                <div>
+                    <label>Введите свой вопрос:</label><br>
+                    <textarea name="question" style="width: 820px; height: 175px;"></textarea><br>
+                </div>
+            </div>
+            <input type="submit" value="Спросить" name="ask">
+            <input type="submit" value="Выход" name="exit"><br>
+            <div class="header">
+                <textarea name="answer" style="width: 920px; height: 500px;">{{ answer }}</textarea><br>
+                <div>
+                    <label>Сохранить в current_chat.json: <input type="checkbox" name="{{ save }}" checked></label><br><br>
+                    <label>Сохранять контекст диалога: <input type="checkbox" name="{{ context }}" checked></label><br>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

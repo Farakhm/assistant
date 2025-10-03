@@ -1,0 +1,28 @@
+[project]
+name = "llmassist"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Farit M.Akhmedzhanov",email = "farakhmster@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic (>=2.11.9,<3.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "openai (>=1.109.1,<2.0.0)",
+    "uvicorn (>=0.37.0,<0.38.0)",
+    "flask (>=3.1.2,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "*", from = "llmassist"}]
+
+[tool.poetry.scripts]
+start = "llmassist.main:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
