@@ -7,7 +7,7 @@ logger1 = loginit(__name__, f"log/{__name__}.log")
 
 class OpenRouterMapper:
     """ Open Router Mapper """
-    def __init__(self, question: str, context: bool = True, save: bool = True) -> None:
+    def __init__(self, question: str = "", context: bool = True, save: bool = True) -> None:
         self.question = question
         self.completion = None
         self.context = context
@@ -35,6 +35,11 @@ class OpenRouterMapper:
         }
         current_context.append(new_entry)
         Filer('results/current_chat.json').saveDictAsJson(current_context)
+
+    def get_models_list(self) -> list:
+        """ Get list of available models """
+        models_list = OpenRouterApi().get_models()
+        return models_list['data']                  # type: ignore
 
     def append_context_with_answer(self) -> None:
         """ Append context with answer """

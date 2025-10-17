@@ -1,42 +1,37 @@
 [
   {
-    "name": "glm-4.5-air",
+    "name": "tongyi-deepresearch-30b-a3b:free",
     "choice": 1,
-    "value": "z-ai/glm-4.5-air:free"
+    "value": "alibaba/tongyi-deepresearch-30b-a3b:free"
   },
   {
-    "name": "grok-4-fast",
+    "name": "longcat-flash-chat:free",
     "choice": 0,
-    "value": "x-ai/grok-4-fast:free"
+    "value": "meituan/longcat-flash-chat:free"
   },
   {
-    "name": "deepseek-chat-v3.1",
+    "name": "nemotron-nano-9b-v2:free",
+    "choice": 0,
+    "value": "nvidia/nemotron-nano-9b-v2:free"
+  },
+  {
+    "name": "deepseek-chat-v3.1:free",
     "choice": 0,
     "value": "deepseek/deepseek-chat-v3.1:free"
   },
   {
-    "name": "llama-3.3-70b-instruct",
-    "choice": 0,
-    "value": "meta-llama/llama-3.3-70b-instruct:free"
-  },
-  {
-    "name": "gemini-2.0-flash-exp",
-    "choice": 0,
-    "value": "google/gemini-2.0-flash-exp:free"
-  },
-  {
-    "name": "qwen3-235b-a22b",
-    "choice": 0,
-    "value": "qwen/qwen3-235b-a22b:free"
-  },
-  {
-    "name": "dolphin-mistral-24b-venice-edition",
-    "choice": 0,
-    "value": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free"
-  },
-  {
-    "name": "gpt-oss-20b",
+    "name": "gpt-oss-20b:free",
     "choice": 0,
     "value": "openai/gpt-oss-20b:free"
+  },
+  {
+    "name": "glm-4.5-air:free",
+    "choice": 0,
+    "value": "z-ai/glm-4.5-air:free"
+  },
+  {
+    "name": "qwen3-coder:free",
+    "choice": 0,
+    "value": "qwen/qwen3-coder:free"
   }
 ]

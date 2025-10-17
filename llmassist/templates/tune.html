@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Chat window </title>
+        <title> Tuning window </title>
         <style>
             .header {
             background-color: rgb(203, 206, 243);
@@ -17,27 +17,30 @@
         </style>
     </head>
     <body>
-        <h2>Main window!</h2>
-        <form action="/index" enctype="multipart/form-data" method="POST">
+        <h2>Tuning window!</h2>
+        <form action="/tune" enctype="multipart/form-data" method="POST">
             <div class="header">
-                <fieldset style="width:600px"><legend>Доступные модели</legend>
+                <fieldset style="width:600px"><legend>Список текущих моделей</legend>
                     {% for model in models %}
-                        {% if model.choice == 1 %}
-                            <input type="radio" id="{{ model.name }}" name="method" value="{{ model.value }}" checked>
-                            <label for="contactChoice">{{ model.name }}</label><br>
-                        {% else %}
-                            <input type="radio" id="{{ model.name }}" name="method" value="{{ model.value }}">
-                            <label for="contactChoice">{{ model.name }}</label><br>
-                        {% endif %}
+                        <label for="contactChoice">{{ model.name }}</label><br>
                     {% endfor %}
                 </fieldset>
                 <div>
-                    <label>Введите свой вопрос:</label><br>
-                    <textarea name="question" style="width: 820px; height: 175px;"></textarea><br>
+                <fieldset style="width:600px"><legend>Критерии выбора модели</legend>
+                    {% if only_free %}
+                        <label>Только бесплатные: <input type="checkbox" name="free" checked></label><br><br>
+                    {% else %}
+                        <label>Только бесплатные: <input type="checkbox" name="free"></label><br><br>
+                    {% endif %}
+                    <label>Величина контекста:
+                    <input type="text" name="context" value="{{ context }}"> токенов</label><br><br>
+                    <label>Дата опубликования:
+                    <input type="text" name="days" value="{{ days }}"> дней назад</label><br>
+                </fieldset>
                 </div>
             </div>
-            <input type="submit" value="Спросить" name="ask">
-            <input type="submit" value="Настройка" name="tune">
+            <input type="submit" value="Найти" name="lst">
+            <input type="submit" value="Применить" name="apply">
             <input type="submit" value="Выход" name="exit"><br>
             <div class="header">
                 <textarea name="answer" style="width: 920px; height: 500px;">{{ answer }}</textarea><br>

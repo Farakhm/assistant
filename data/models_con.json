@@ -1,0 +1,48 @@
+[
+  {
+    "name": "glm-4.5-air",
+    "choice": 0,
+    "value": "z-ai/glm-4.5-air:free",
+	"context": 128000
+  },
+  {
+    "name": "grok-4-fast",
+    "choice": 0,
+    "value": "x-ai/grok-4-fast:free"
+  },
+  {
+    "name": "deepseek-chat-v3.1",
+    "choice": 1,
+    "value": "deepseek/deepseek-chat-v3.1:free"
+  },
+  {
+    "name": "llama-3.3-70b-instruct",
+    "choice": 0,
+    "value": "meta-llama/llama-3.3-70b-instruct:free",
+	"context": 2048
+  },
+  {
+    "name": "gemini-2.0-flash-exp",
+    "choice": 0,
+    "value": "google/gemini-2.0-flash-exp:free",
+	"context": 8192
+  },
+  {
+    "name": "qwen3-235b-a22b",
+    "choice": 0,
+    "value": "qwen/qwen3-235b-a22b:free",
+	"context": 8192
+  },
+  {
+    "name": "dolphin-mistral-24b-venice-edition",
+    "choice": 0,
+    "value": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+	"context": 8192
+  },
+  {
+    "name": "gpt-oss-20b",
+    "choice": 0,
+    "value": "openai/gpt-oss-20b:free",
+	"context": 8192
+  }
+]
